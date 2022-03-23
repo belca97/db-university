@@ -14,11 +14,29 @@ laurea (286)
 
 I comandi che ho utlizzato
 
-1.SELECT * FROM `students` WHERE YEAR (`DATE_OF_BIRTH`) = '2021'
+1.SELECT * FROM `students` WHERE YEAR (`DATE_OF_BIRTH`) = '1990'
+1*. SELECT * FROM `students` WHERE `date_of_birth` BETWEEN `1990-01-01` AND `1990-12-31`
+
+
 2.SELECT * FROM `courses` WHERE `CFU` > 10
+
 3.SELECT * FROM `students` WHERE YEAR (`DATE_OF_BIRTH`) < '1992'
+3* SELECT * FROM `students` WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) > 30
+
+
 4.SELECT * FROM `courses` WHERE `period` = 'I semestre' AND `YEAR` = '1'
+
+
 5.SELECT COUNT(`DATE`) FROM `EXAMS` WHERE DATE = '2020/06/20' AND `HOUR` > HOUR('14:00:00')
-6.SELECT * FROM `degrees` WHERE `name` LIKE '%magistrale%'
+5* SELECR * FROM `exams` WHERE `date` LIKE '2020-06-20' AND `hour` > "14:00:00"
+5.SELECT COUNT(`DATE`) FROM `EXAMS` WHERE DATE = '2020/06/20' AND HOUR(`hour`) >= 14;
+
+
+
+6.SELECT * FROM `degrees` WHERE `level` = 'magistrale'
+
+
 7.SELECT COUNT(`name`) * FROM `departments`
-8.SELECT * FROM `TEACHERS` WHERE `phone` IS NULL
+
+
+8.SELECT COUNT(*) FROM `TEACHERS` WHERE `phone` IS NULL
